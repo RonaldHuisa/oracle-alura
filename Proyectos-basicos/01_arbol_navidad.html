@@ -1,0 +1,42 @@
+<h1>Arbol de Navidad</h1>
+
+<script>
+    
+    function imprime(frase){
+        document.write(frase)
+    }
+
+    function generacolor(){
+		let colores = ["red","purple","yellow","blue","green"];	//Colores de la decoración del arbol
+		let color = colores[~~(Math.random()*colores.length)]
+		return `<font color=${color}>*</font>`
+	}
+
+
+
+    imprime("<h3> Feliz Navidad 2022 </h3>");      //Titulo
+
+    let altura = parseInt(prompt("Ingrese altura de arbol: ")); //Pide altura de arbol
+    
+	
+         
+    let oja = "<font color='green'>*</font>"     //Para las ramas del arbol
+    let espacio = "&nbsp"
+
+    for(let arbol = altura; arbol >= 0; arbol --){
+        imprime("<br>");
+        for(let ancho = 0; ancho <= altura; ancho ++){
+            if( arbol >= ancho){
+                imprime(espacio);
+            }else{
+                let p = Math.random() * 100;
+                if(p < 50){
+                    imprime(generacolor())
+                }else{
+                    imprime(oja)
+                }
+            }
+        }
+    }
+
+</script>
