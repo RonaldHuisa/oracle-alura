@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yan ken po</title>
+</head>
+<body>
+    <h3>Piedra, papel o tijera</h3>
+
+    <select id="opcion">
+        <option value="0">Piedra</option>
+        <option value="1">Papel</option>
+        <option value="2">Tijera</option>
+    </select>
+
+    <input type="button" value="Jugar" onclick="jugar()">
+
+    <p id="resultado"></p>
+
+    <script>    
+        function jugar(){
+
+            let opcion_mia = document.getElementById("opcion").value;
+            let opcion_bot = ~~(Math.random() * 3);
+
+            let resultado = ""
+
+            switch(opcion_mia){
+                case "0":   if(opcion_bot == "0"){
+                                resultado = "Empate"
+                            }else if(opcion_bot == "1"){
+                                resultado = "Perdiste"
+                            }else{
+                                resultado = "Ganaste"
+                            }
+                    break;
+                            
+                case "1":   if(opcion_bot == "1"){
+                                resultado = "Empate"
+                            }else if(opcion_bot == "2"){
+                                resultado = "Perdiste"
+                            }else{
+                                resultado = "Ganaste"
+                            }
+                    break;
+
+                case "2":   if(opcion_bot == "2"){
+                                resultado = "Empate"
+                            }else if(opcion_bot == "0"){
+                                resultado = "Perdiste"
+                            }else{
+                                resultado = "Ganaste"
+                            }
+                    break;
+            }
+
+            let opciones = ["Piedra","Papel","Tijera"]
+
+            resultado += "<br>" + `Tú Elegiste: ${opciones[opcion_mia]} <br>El Bot Eligió: ${opciones[opcion_bot]}`
+            document.getElementById("resultado").innerHTML = resultado
+        }
+    </script>
+
+</body>
+</html>
