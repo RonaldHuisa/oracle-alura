@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<h1>Programa de simulación inicio de sesión</h1>
+
+<script>
+
+    let usuario = "alura";
+    let password = "alura321";
+
+    let verifica = 0;
+    
+    do{
+        let ingresa_usuario = prompt("Ingresa su usuario");
+        let ingresa_password = prompt("Ingresa su contraseña");
+
+        if(ingresa_usuario == usuario && ingresa_password == password){
+            verifica = 1;
+        }else{
+            alert("Inicio de sesión inválido.")
+        }
+
+    }while(verifica == 0);
+
+    alert("Bienvenido al sistema " + usuario)
+    document.write("Ya ingresaste al sistema.")
+
+</script>
